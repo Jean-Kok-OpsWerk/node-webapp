@@ -11,14 +11,14 @@ pipeline {
         stage('Build Docker Image') {
             steps {  
                 script {  
-                    docker.build('node-webapp:latest')
+                    docker.build('node-app:latest')
                 }
             }  
         }  
         stage('Run Docker Container') {
             steps {  
                 script {  
-                    docker.image('node-webapp:latest').run('-d -p 3000:3000')
+                    docker.image('node-app:latest').run('-d -p 3000:3000')
                 }  
             }  
         }
